@@ -40,4 +40,4 @@ mbed compile -f
 ```
 
 Once the Nucleo has been flashed, no further actions should be taken, except change the USB connection from the PC to the Pi. The rest goes via the input provided by the Pi.
-The [main.cpp file](./thermal-printer-updated-own-version/main.cpp) contains the necessary commands to get the received characters, puts them into the buffer until a new line is detected, then prints the buffer and resets the buffer so new data can be read and printed again.
+The [main.cpp file](./src/main.cpp) contains the necessary commands to get the received characters, puts them into the buffer until a new line is detected, then prints the buffer and resets the buffer so new data can be read and printed again.
