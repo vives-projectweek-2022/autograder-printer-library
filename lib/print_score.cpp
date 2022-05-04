@@ -14,7 +14,7 @@ namespace printer
     }
     
     void ScorePrinter::print_characters(void){
-
+        int buffer_length = sizeof(this->buffer)/sizeof(this->buffer[0]);
         char input = 0;
         int index = 0;
         while(true){
@@ -25,10 +25,15 @@ namespace printer
             this->buffer[index] = input;
             index++;
         }
+        // index = 0;
+        for (int i = index+1; i < buffer_length ; i++){
+            this->buffer[i] = 0;
+        }
         index = 0;
         printf("***%s***", this->buffer);
         char * OutputText = this->buffer;               
         printer->print(OutputText);
+        this->clear_buffer();
     }
 
     void ScorePrinter::clear_buffer(void){

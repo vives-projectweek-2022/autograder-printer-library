@@ -15,9 +15,8 @@ BufferedSerial pi(USBTX, USBRX);
 
 int main() {
         printer::ScorePrinter scorePrinter(&thermal_printer, &pi);
-
+        scorePrinter.clear_buffer();
         while(true){
-
                 scorePrinter.print_characters();
                 scorePrinter.clear_buffer();                
         }
